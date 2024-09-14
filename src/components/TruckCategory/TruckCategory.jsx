@@ -1,8 +1,9 @@
+import css from "./TruckCategory.module.css";
 const TruckCategory = ({ name, children }) => {
   return (
-    <div>
+    <div className={css.category}>
       {children}
-      <span>{name}</span>
+      <span className={css.categoryName}>{name}</span>
     </div>
   );
 };

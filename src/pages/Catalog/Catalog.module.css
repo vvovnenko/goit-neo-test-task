@@ -1,0 +1,14 @@
+.catalog {
+  position: relative;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  gap: 64px;
+  padding: 48px 64px 52px 64px;
+}
+
+.loadMore {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}

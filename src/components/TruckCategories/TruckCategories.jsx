@@ -1,3 +1,4 @@
+import css from "./TruckCategories.module.css";
 import TruckCategory from "../TruckCategory/TruckCategory.jsx";
 import DiagramIcon from "../../icons/DiagramIcon.jsx";
 import WindIcon from "../../icons/WindIcon.jsx";
@@ -36,7 +37,7 @@ const resolveCategoriesList = (data) => {
 const TruckCategories = ({ data }) => {
   const categories = resolveCategoriesList(data);
   return (
-    <div>
+    <div className={css.container}>
       {categories.map(([Icon, name], key) => (
         <TruckCategory name={name} key={key}>
           <Icon />

@@ -6,16 +6,32 @@
     justify-content: center;
     align-items: center;
     border-radius: 200px;
-    background: var(--button-color, #e44848);
-    color: var(--white-color, #fff);
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
     line-height: 24px; /* 150% */
     letter-spacing: -0.08px;
+    cursor: pointer;
+}
+
+.red {
+    background: var(--button-color);
+    color: var(--white-color);
     transition: background 0.3s ease-in-out;
 }
 
-.btn:hover {
-    background: var(--button-hover-color, #d84343);
+.red:hover {
+    background: var(--button-hover-color);
+}
+
+.light {
+    border: 1px solid var(--gray-light-color);
+    color: var(--main-color);
+    background: transparent;
+    outline: none;
+    transition: border 0.3s ease-in-out;
+}
+
+.light:hover {
+    border: 1px solid var(--button-hover-color);
 }
