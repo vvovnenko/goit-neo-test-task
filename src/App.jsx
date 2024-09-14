@@ -11,7 +11,7 @@ const Truck = lazy(() => import("./pages/Truck/Truck.jsx"));
 function App() {
   return (
     <AppLayout>
-      <Suspense fallback={Loader}>
+      <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/catalog" element={<Catalog />} />
