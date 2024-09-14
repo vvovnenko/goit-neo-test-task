@@ -1,0 +1,31 @@
+.bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding: 24px 64px;
+  border-bottom: 1px solid var(--badges-color, #f2f4f7);
+  background: var(--input-color, #f7f7f7);
+}
+
+.logo {
+  position: absolute;
+  left: 64px;
+  top: 32px;
+}
+
+.link {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--main-color, #101828);
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.active {
+  color: var(--button-hover-color, #d84343);
+}
