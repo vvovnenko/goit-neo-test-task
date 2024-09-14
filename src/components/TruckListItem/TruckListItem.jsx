@@ -1,12 +1,24 @@
-import { Link } from "react-router-dom";
 import RatingPressedIcon from "../../icons/RatingPressedIcon.jsx";
 import HeartPressedIcon from "../../icons/HeartPressedIcon.jsx";
 import LocationActiveIcon from "../../icons/LocationActiveIcon.jsx";
 import TruckCategories from "../TruckCategories/TruckCategories.jsx";
 import css from "./TruckListItem.module.css";
 import Button from "../Button/Button.jsx";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  selectFavoriteList,
+  toggleFavorite,
+} from "../../redux/favorite/slice.js";
+import HeartIcon from "../../icons/HeartIcon.jsx";
 
 const TruckListItem = ({ data }) => {
+  const dispatch = useDispatch();
+  const favoriteList = useSelector(selectFavoriteList);
+  const isFavorite = favoriteList.includes(data.id);
+
+  const handleFavoriteClick = () => {
+    dispatch(toggleFavorite(data.id));
+  };
   return (
     <div className={css.container}>
       <img
@@ -19,8 +31,8 @@ const TruckListItem = ({ data }) => {
           <h2 className={css.title}>{data.name}</h2>
           <div className={css.priceWrapper}>
             <p>€{data.price}.00</p>
-            <div className={css.iconWrapper}>
-              <HeartPressedIcon />
+            <div className={css.iconWrapper} onClick={handleFavoriteClick}>
+              {isFavorite ? <HeartPressedIcon /> : <HeartIcon />}
             </div>
           </div>
         </div>
