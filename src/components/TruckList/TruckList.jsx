@@ -1,18 +1,16 @@
 import { useSelector } from "react-redux";
 import { selectTrucks } from "../../redux/catalog/slice.js";
-import { Link } from "react-router-dom";
+import TruckListItem from "../TruckListItem/TruckListItem.jsx";
 
 const TruckList = () => {
   const trucks = useSelector(selectTrucks);
 
   return (
-    <ul>
+    <div>
       {trucks.map((item) => (
-        <li key={item.id}>
-          <Link to={`/catalog/${item.id}`}>{item.name}</Link>
-        </li>
+        <TruckListItem key={item.id} data={item} />
       ))}
-    </ul>
+    </div>
   );
 };
 

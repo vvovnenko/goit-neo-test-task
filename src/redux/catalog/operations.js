@@ -1,7 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
-
-const BASE_URL = "https://66b1f8e71ca8ad33d4f5f63e.mockapi.io";
+import { fetchCampers } from "../../api/campers.js";
 
 export const fetchTrucks = createAsyncThunk(
   "catalog/fetchTrucks",
@@ -11,15 +9,8 @@ export const fetchTrucks = createAsyncThunk(
     } = thunkAPI.getState();
     page = nextPage ? page + 1 : 1;
 
-    const params = new URLSearchParams({
-      page,
-      limit: 4,
-    });
-
     try {
-      const {
-        data: { items, total },
-      } = await axios.get(`${BASE_URL}/campers?${params}`);
+      const { items, total } = await fetchCampers(page, 4);
       return { items, total, page };
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
