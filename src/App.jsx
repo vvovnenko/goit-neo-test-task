@@ -1,4 +1,3 @@
-import "./App.css";
 import AppLayout from "./components/AppLayout/AppLayout.jsx";
 import { lazy, Suspense } from "react";
 import Loader from "./components/Loader/Loader.jsx";

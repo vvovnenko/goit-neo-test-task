@@ -1,0 +1,41 @@
+:root {
+    --main-color: #101828;
+    --text-color: #475467;
+    --gray-color: #6c717b;
+    --button-color: #e44848;
+    --button-hover-color: #d84343;
+    --rating-color: #ffc531;
+    --gray-light-color: #dadde1;
+    --white-color: #ffffff;
+    --input-color: #f7f7f7;
+    --badges-color: #f2f4f7;
+}
+
+body {
+    line-height: 1.5;
+    background: var(--white-color);
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}

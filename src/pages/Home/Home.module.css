@@ -1,0 +1,30 @@
+.hero {
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;  background-image: url('/src/assets/hero.png');
+  padding: 260px 64px;
+}
+
+@media only screen and (min-resolution: 2dppx) {
+  .hero {
+    background-image: url('/src/assets/hero@2x.png');
+  }
+}
+
+.title {
+  color: var(--input-color, #f7f7f7);
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px;
+  margin-bottom: 16px;
+}
+
+.description {
+  color: var(--input-color, #f7f7f7);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px;
+  margin-bottom: 40px;
+}
