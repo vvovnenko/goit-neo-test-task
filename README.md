@@ -42,4 +42,4 @@ project.
 
 ## Deployed Project
 
-The project is deployed on [Vercel](https://goit-neo-test-task-vvovnenko.vercel.app/).
+The project is deployed on [Vercel](https://goit-neo-test-task.vercel.app/).
