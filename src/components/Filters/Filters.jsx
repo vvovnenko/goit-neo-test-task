@@ -1,6 +1,6 @@
 import LocationFilter from "../LocationFilter/LocationFilter.jsx";
 import VehicleFilter from "../VehicleFilter/VehicleFilter.jsx";
-import styles from "./Filters.module.css";
+import css from "./Filters.module.css";
 import Button from "../Button/Button.jsx";
 import { fetchTrucks } from "../../redux/catalog/operations.js";
 import { useDispatch } from "react-redux";
@@ -9,7 +9,7 @@ export default function Filters() {
   const dispatch = useDispatch();
 
   return (
-    <div className={styles.container}>
+    <div className={css.container}>
       <LocationFilter />
       <VehicleFilter />
       <Button onClick={() => dispatch(fetchTrucks())}>Search</Button>

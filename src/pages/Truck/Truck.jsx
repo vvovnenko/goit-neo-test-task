@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { fetchCamper } from "../../api/campers.js";
 import TruckInfo from "../../components/TruckInfo/TruckInfo.jsx";
+import css from "./Truck.module.css";
 
 const Truck = () => {
   const { id } = useParams();
@@ -27,7 +28,9 @@ const Truck = () => {
     fetchTruckById();
   }, [id]);
 
-  return <div>{truck && <TruckInfo data={truck} />}</div>;
+  return (
+    <div className={css.container}>{truck && <TruckInfo data={truck} />}</div>
+  );
 };
 
 export default Truck;

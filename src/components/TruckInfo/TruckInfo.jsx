@@ -1,48 +1,81 @@
+import css from "./TruckInfo.module.css";
 import LocationActiveIcon from "../../icons/LocationActiveIcon.jsx";
 import RatingPressedIcon from "../../icons/RatingPressedIcon.jsx";
 import { useState } from "react";
+import clsx from "clsx";
+import ReviewList from "../ReviewList/ReviewList.jsx";
+import TruckFeatures from "../TruckFeatures/TruckFeatures.jsx";
 
 const TruckInfo = ({ data }) => {
   const [isLinkActive, setIsLinkActive] = useState("features");
+
+  const createInfoTabClassName = (tab) => {
+    return clsx(
+      css.infoNavigationTab,
+      isLinkActive === tab && css.infoNavigationTabActive,
+    );
+  };
+
   return (
-    <div>
-      <div>
-        <h2>{data.name}</h2>
-        <div>
-          <span>
-            <div>
+    <>
+      <div className={css.header}>
+        <h2 className={css.headerTitle}>{data.name}</h2>
+        <div className={css.headerInfo}>
+          <span className={css.reviews}>
+            <div className={css.reviewsIcon}>
               <RatingPressedIcon />
             </div>
-            <span>{`${data.rating}(${
+            <span className={css.reviewsText}>{`${data.rating}(${
               data.reviews ? data.reviews.length : null
             } Reviews)`}</span>
           </span>
-          <span>
-            <LocationActiveIcon />
+          <span className={css.location}>
+            <LocationActiveIcon width={16} height={16} />
             {data.location}
           </span>
         </div>
-        <p>€{data.price}.00</p>
+        <div className={css.price}>€{data.price}.00</div>
       </div>
-      <div>
+      <div className={css.gallery}>
         {data.gallery.map((item, index) => (
-          <img src={item.original} alt="truck photo" key={index} />
+          <img
+            className={css.galleryPhoto}
+            src={item.original}
+            alt="truck photo"
+            key={index}
+          />
         ))}
       </div>
       <div>
-        <p>{data.description}</p>
+        <p className={css.description}>{data.description}</p>
         <div>
-          <div>
-            <span onClick={() => setIsLinkActive("features")}>Features</span>
-            <span onClick={() => setIsLinkActive("reviews")}>Reviews</span>
+          <div className={css.infoNavigation}>
+            <span
+              className={createInfoTabClassName("features")}
+              onClick={() => setIsLinkActive("features")}
+            >
+              Features
+            </span>
+            <span
+              className={createInfoTabClassName("reviews")}
+              onClick={() => setIsLinkActive("reviews")}
+            >
+              Reviews
+            </span>
           </div>
         </div>
-        <div>
-          <div>{isLinkActive === "features" ? "Main info" : "Reviews"}</div>
+        <div className={css.infoWrapper}>
+          <div>
+            {isLinkActive === "features" ? (
+              <TruckFeatures data={data} />
+            ) : (
+              <ReviewList reviews={data.reviews || []} />
+            )}
+          </div>
           {/*<Form/>*/}
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -1,4 +1,4 @@
-import styles from "./LocationFilter.module.css";
+import css from "./LocationFilter.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { selectLocation } from "../../redux/filter/slice.js";
 import { setLocation } from "../../redux/filter/slice.js";
@@ -15,19 +15,19 @@ export default function LocationFilter() {
   }
 
   return (
-    <div className={styles.location}>
-      <label htmlFor="location" className={styles.locationLabel}>
+    <div className={css.location}>
+      <label htmlFor="location" className={css.locationLabel}>
         Location
       </label>
       <input
         type="text"
         id="location"
-        className={styles.locationInput}
+        className={css.locationInput}
         placeholder="City"
         onChange={handleEnterLocation}
         value={location}
       />
-      <div className={styles.locationWrapper}>
+      <div className={css.locationWrapper}>
         <div>{location ? <LocationActiveIcon /> : <LocationIcon />}</div>
       </div>
     </div>

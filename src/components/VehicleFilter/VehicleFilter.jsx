@@ -1,4 +1,4 @@
-import styles from "./VehicleFilter.module.css";
+import css from "./VehicleFilter.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import {
   selectAC,
@@ -51,39 +51,36 @@ export default function VehicleFilter() {
 
   return (
     <div>
-      <h3 className={styles.vehicleTitle}>Filters</h3>
+      <h3 className={css.vehicleTitle}>Filters</h3>
 
-      <h2 className={styles.optionsTitle}>Vehicle equipment</h2>
+      <h2 className={css.optionsTitle}>Vehicle equipment</h2>
 
-      <div className={styles.options}>
+      <div className={css.options}>
         {equipments.map(([value, action, Icon, name], key) => (
           <div
             key={key}
-            className={clsx(
-              styles.optionsItem,
-              value && styles.optionsItemActive,
-            )}
+            className={clsx(css.optionsItem, value && css.optionsItemActive)}
             onClick={() => dispatch(action())}
           >
             <Icon width={"32"} height={"32"} />
-            <p className={styles.optionsItemText}>{name}</p>
+            <p className={css.optionsItemText}>{name}</p>
           </div>
         ))}
       </div>
 
-      <h2 className={styles.optionsTitle}>Vehicle type</h2>
-      <div className={styles.options}>
+      <h2 className={css.optionsTitle}>Vehicle type</h2>
+      <div className={css.options}>
         {vehicleTypes.map(([value, Icon, name], key) => (
           <div
             key={key}
             className={clsx(
-              styles.optionsItem,
-              vehicleType === value && styles.optionsItemActive,
+              css.optionsItem,
+              vehicleType === value && css.optionsItemActive,
             )}
             onClick={() => dispatch(toggleVehicleType(value))}
           >
             <Icon />
-            <p className={styles.optionsItemText}>{name}</p>
+            <p className={css.optionsItemText}>{name}</p>
           </div>
         ))}
       </div>
