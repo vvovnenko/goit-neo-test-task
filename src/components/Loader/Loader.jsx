@@ -3,17 +3,19 @@ import css from "./Loader.module.css";
 
 const Loader = () => {
   return (
-    <div className={css.loader}>
-      <ThreeDots
-        visible={true}
-        height="80"
-        width="80"
-        color="#646cff"
-        radius="9"
-        ariaLabel="three-dots-loading"
-        wrapperStyle={{}}
-        wrapperClass=""
-      />
+    <div className={css.wrapper}>
+      <div className={css.loader}>
+        <ThreeDots
+          visible={true}
+          height="80"
+          width="80"
+          color="var(--button-color)"
+          radius="9"
+          ariaLabel="three-dots-loading"
+          wrapperStyle={{}}
+          wrapperClass=""
+        />
+      </div>
     </div>
   );
 };

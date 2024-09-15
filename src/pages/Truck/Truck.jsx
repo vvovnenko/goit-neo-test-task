@@ -3,24 +3,25 @@ import { useEffect, useState } from "react";
 import { fetchCamper } from "../../api/campers.js";
 import TruckInfo from "../../components/TruckInfo/TruckInfo.jsx";
 import css from "./Truck.module.css";
+import { useDispatch } from "react-redux";
+import { hideLoader, showLoader } from "../../redux/loader/slice.js";
+import { toast } from "react-hot-toast";
 
 const Truck = () => {
   const { id } = useParams();
+  const dispatch = useDispatch();
 
   const [truck, setTruck] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(false);
 
   const fetchTruckById = async () => {
-    setIsLoading(true);
-    setIsError(false);
+    dispatch(showLoader());
 
     try {
       setTruck(await fetchCamper(id));
     } catch (error) {
-      setIsError(true);
+      toast.error("Failed to load vehicles!");
     } finally {
-      setIsLoading(false);
+      dispatch(hideLoader());
     }
   };
 
