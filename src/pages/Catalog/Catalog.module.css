@@ -7,6 +7,11 @@
   padding: 48px 64px 52px 64px;
 }
 
+.truckList {
+  display: flex;
+  flex-direction: column;
+}
+
 .loadMore {
   display: flex;
   justify-content: center;

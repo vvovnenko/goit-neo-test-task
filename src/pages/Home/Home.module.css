@@ -11,7 +11,7 @@
   }
 }
 
-.title {
+.vehicleTitle {
   color: var(--input-color, #f7f7f7);
   font-size: 48px;
   font-style: normal;

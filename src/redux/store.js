@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import catalogSlice from "./catalog/slice.js";
 import favoriteSlice from "./favorite/slice.js";
+import filterSlice from "./filter/slice.js";
 import {
   persistStore,
   persistReducer,
@@ -24,6 +25,7 @@ export const store = configureStore({
       },
       favoriteSlice,
     ),
+    filter: filterSlice,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

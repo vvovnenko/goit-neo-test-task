@@ -1,0 +1,65 @@
+.vehicleTitle {
+  color: var(--text-color);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.optionsTitle {
+  color: var(--main-color);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  margin-bottom: 48px;
+  margin-top: 32px;
+  position: relative;
+}
+
+.optionsTitle::after {
+  position: absolute;
+  bottom: -24px;
+  left: 0;
+  content: '';
+  width: 360px;
+  height: 1px;
+  background-color: var(--gray-light-color);
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  width: 360px;
+}
+
+.optionsItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+  border-radius: 12px;
+  border: 1px solid var(--gray-light-color);
+  mix-blend-mode: multiply;
+  width: 112px;
+  height: 96px;
+  cursor: pointer;
+  user-select: none;
+  transition: border 0.3s ease-in-out;
+}
+
+.optionsItemActive {
+  border: 1px solid var(--button-color);
+}
+
+.optionsItemText {
+  color: var(--main-color);
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.08px;
+}

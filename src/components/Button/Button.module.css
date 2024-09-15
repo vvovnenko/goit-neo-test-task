@@ -18,6 +18,7 @@
     background: var(--button-color);
     color: var(--white-color);
     transition: background 0.3s ease-in-out;
+    border: none;
 }
 
 .red:hover {

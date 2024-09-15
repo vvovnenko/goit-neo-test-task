@@ -5,6 +5,7 @@ import TruckList from "../../components/TruckList/TruckList.jsx";
 import { selectHasNextPage } from "../../redux/catalog/slice.js";
 import css from "./Catalog.module.css";
 import Button from "../../components/Button/Button.jsx";
+import Filters from "../../components/Filters/Filters.jsx";
 
 const Catalog = () => {
   const dispatch = useDispatch();
@@ -16,7 +17,8 @@ const Catalog = () => {
 
   return (
     <div className={css.catalog}>
-      <div>
+      <Filters />
+      <div className={css.truckList}>
         <TruckList />
         {hasNextPage && (
           <div className={css.loadMore}>
