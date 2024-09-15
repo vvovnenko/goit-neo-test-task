@@ -5,6 +5,7 @@ import { useState } from "react";
 import clsx from "clsx";
 import ReviewList from "../ReviewList/ReviewList.jsx";
 import TruckFeatures from "../TruckFeatures/TruckFeatures.jsx";
+import BookForm from "../BookForm/BookForm.jsx";
 
 const TruckInfo = ({ data }) => {
   const [isLinkActive, setIsLinkActive] = useState("features");
@@ -72,7 +73,7 @@ const TruckInfo = ({ data }) => {
               <ReviewList reviews={data.reviews || []} />
             )}
           </div>
-          {/*<Form/>*/}
+          <BookForm />
         </div>
       </div>
     </>

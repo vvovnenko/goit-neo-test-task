@@ -1,0 +1,66 @@
+.container {
+  border: 1px solid var(--gray-light-color);
+  border-radius: 10px;
+  padding: 44px 57px;
+  width: 640px;
+  min-height: 588px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  margin-bottom: 8px;
+  color: var(--main-color);
+}
+
+.text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  margin-bottom: 24px;
+  color: var(--gray-color);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.field {
+  border-radius: 12px;
+  padding: 18px;
+  width: 527px;
+  height: 60px;
+  background-color: var(--input-color);
+  border: none;
+}
+
+.field:focus {
+  border: 1px solid var(--button-color);
+  outline-color: transparent;
+  outline-offset: 4px;
+}
+
+.comment {
+  border-radius: 10px;
+  padding: 18px 308px 76px 18px;
+  width: 527px;
+  height: 118px;
+  resize: none;
+  background-color: var(--input-color);
+  border: none;
+}
+
+.field:focus,
+.comment:focus {
+  border: 1px solid var(--button-color);
+  outline-color: transparent;
+  outline-offset: 4px;
+}
+
+.error {
+  color: var(--button-color);
+}

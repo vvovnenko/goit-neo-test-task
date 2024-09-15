@@ -14,8 +14,6 @@ export const fetchTrucks = createAsyncThunk(
       return !!value ? { ...acc, [key]: value } : acc;
     }, {});
 
-    console.log(filteredObj);
-
     try {
       const { items, total } = await fetchCampers(page, 4, filteredObj);
       return { items, total, page };

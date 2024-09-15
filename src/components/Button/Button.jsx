@@ -6,6 +6,7 @@ const Button = ({
   link = null,
   light = false,
   onClick = () => {},
+  submit = false,
   children,
 }) => {
   const className = clsx(css.btn, light ? css.light : css.red);
@@ -17,7 +18,11 @@ const Button = ({
     );
   }
   return (
-    <button type="button" className={className} onClick={onClick}>
+    <button
+      type={submit ? "submit" : "button"}
+      className={className}
+      onClick={onClick}
+    >
       {children}
     </button>
   );
