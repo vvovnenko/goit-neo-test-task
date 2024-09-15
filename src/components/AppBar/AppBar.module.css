@@ -5,8 +5,8 @@
   justify-content: center;
   gap: 32px;
   padding: 24px 64px;
-  border-bottom: 1px solid var(--badges-color, #f2f4f7);
-  background: var(--input-color, #f7f7f7);
+  border-bottom: 1px solid var(--badges-color);
+  background: var(--input-color);
 }
 
 .logo {
@@ -18,7 +18,7 @@
 .link {
   display: inline-block;
   text-decoration: none;
-  color: var(--main-color, #101828);
+  color: var(--main-color);
   text-align: center;
   font-size: 16px;
   font-style: normal;
@@ -27,5 +27,5 @@
 }
 
 .active {
-  color: var(--button-hover-color, #d84343);
+  color: var(--button-hover-color);
 }

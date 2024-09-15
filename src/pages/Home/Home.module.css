@@ -12,7 +12,7 @@
 }
 
 .vehicleTitle {
-  color: var(--input-color, #f7f7f7);
+  color: var(--input-color);
   font-size: 48px;
   font-style: normal;
   font-weight: 600;
@@ -21,7 +21,7 @@
 }
 
 .description {
-  color: var(--input-color, #f7f7f7);
+  color: var(--input-color);
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
